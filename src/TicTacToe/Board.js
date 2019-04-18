@@ -2,8 +2,31 @@ import React from 'react';
 import Square from './Square.js';
 
 class Board extends React.Component {
+  /** Set the Board's initial state to contain an array of 9 nulls corresponding to the 9 squares */
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null)
+    };
+  }
+
+  handleClick(i) {
+    /** Create a copy of the squares array to modify instead of modifying the existing array */
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({ squares: squares });
+    console.log(squares);
+  }
+
+  /** set square's value attribute to read from the squares array */
+  /** onClick, maintain the Board's state */
   renderSquare(i) {
-    return <Square value={i} />;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
