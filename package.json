@@ -10,9 +10,7 @@
     "react-scripts": "2.1.8"
   },
   "devDependencies": {
-    "typescript": "3.3.3",
-    "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.12.1"
+    "typescript": "3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,8 +18,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
-  "jest": {
-    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
-  }
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
