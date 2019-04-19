@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './TicTacToe/Game.js';
+import Game from './TicTacToe/Game';
 
 import './styles.css';
 
