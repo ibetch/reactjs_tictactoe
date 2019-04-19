@@ -28,7 +28,6 @@ class Board extends React.Component {
       squares: squares,
       xIsNext: !this.state.xIsNext
     });
-    console.log(this.state);
   }
 
   /** set square's value attribute to read from the squares array */

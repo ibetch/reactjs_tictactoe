@@ -3,6 +3,7 @@ import calculateWinner from './calculateWinner.util.js';
 describe('The calculateWinner function', () => {
   describe('when there is not yet a winner', () => {
     const currentSquares = [null, null, null, null, 'O', 'O', null, null, null];
+
     it('should allow the players to keep playing', () => {
       expect(calculateWinner(currentSquares)).toBe(null);
     });
