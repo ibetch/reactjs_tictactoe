@@ -1,5 +1,6 @@
 import React from 'react';
 import Square from './Square.js';
+import calculateWinner from './calculateWinner.util.js';
 
 class Board extends React.Component {
   /** Set the Board's initial state to contain an array of 9 nulls corresponding to the 9 squares */
@@ -12,8 +13,16 @@ class Board extends React.Component {
   }
 
   handleClick(i) {
-    /** Create a copy of the squares array to modify instead of modifying the existing array */
+    /**
+     * Create a copy of the squares array to modify instead of modifying the existing array
+     */
     const squares = this.state.squares.slice();
+    /**
+     * Return early by ignoring a click if someone has won the game or if a Square is already filled
+     */
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       squares: squares,
@@ -34,7 +43,13 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    const winner = calculateWinner(this.state.squares);
+    let status;
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    }
 
     return (
       <div>
