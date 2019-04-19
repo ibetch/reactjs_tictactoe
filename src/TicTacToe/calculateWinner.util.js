@@ -1,6 +1,5 @@
 /**
- * Check if a player has won
- * returns winning player (X or O)
+ * Check for a winner and return 'X', 'O', or null
  */
 function calculateWinner(squares) {
   const lines = [
