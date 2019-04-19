@@ -1,23 +1,16 @@
 import React from 'react';
 
-class Square extends React.Component {
-  /** Initialize state to remember that the square got clicked */
-
-  constructor(props) {
-    /** Call super when defining the constructor of a subclass */
-    super(props);
-    this.state = {
-      value: null
-    };
-  }
-
-  render() {
-    return (
-      <button className="square" onClick={() => this.props.onClick()}>
-        {this.props.value}
-      </button>
-    );
-  }
+/**
+ * Square functional component
+ * - takes props as input
+ * - returns rendered button
+ */
+function Square(props) {
+  return (
+    <button className="square" onClick={() => props.onClick()}>
+      {props.value}
+    </button>
+  );
 }
 
 export default Square;
