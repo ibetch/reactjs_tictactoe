@@ -6,16 +6,20 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(9).fill(null)
+      squares: Array(9).fill(null),
+      xIsNext: true
     };
   }
 
   handleClick(i) {
     /** Create a copy of the squares array to modify instead of modifying the existing array */
     const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState({ squares: squares });
-    console.log(squares);
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares: squares,
+      xIsNext: !this.state.xIsNext
+    });
+    console.log(this.state);
   }
 
   /** set square's value attribute to read from the squares array */
@@ -30,7 +34,7 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
     return (
       <div>
