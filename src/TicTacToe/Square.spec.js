@@ -13,18 +13,28 @@ describe('The Square component', () => {
       const wrapper = shallow(<Square />);
       expect(wrapper).toBeDefined();
     });
+
     it('simulates click events', () => {
       const mockClick = jest.fn();
       const wrapper = shallow(<Square onClick={mockClick} />);
-
       wrapper.find('button').simulate('click');
       expect(mockClick.mock.calls.length).toEqual(1);
     });
+
     it('renders props when passed in', () => {
       const mockValue = 'X';
       const wrapper = shallow(<Square value={mockValue} />);
-
       expect(wrapper.text()).toEqual(mockValue);
     });
+  });
+
+  describe('when fully rendered', () => {
+    const wrapper = mount(<Square />);
+    expect(wrapper).toBeDefined();
+  });
+
+  describe('when statically rendered', () => {
+    const wrapper = render(<Square />);
+    expect(wrapper).toBeDefined();
   });
 });
