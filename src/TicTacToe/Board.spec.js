@@ -23,7 +23,19 @@ describe('<Board />', () => {
       expect(wrapper.find('.status').text()).toContain('O');
     });
     describe('when a square is clicked on', () => {
-      it('should create a copy of the squares array to modify', () => {});
+      it("should alternate rendering an 'X' and 'O'", () => {
+        wrapper
+          .find(Square)
+          .at(0)
+          .simulate('click');
+        expect(wrapper.find('.status').text()).toContain('O');
+
+        wrapper
+          .find(Square)
+          .at(1)
+          .simulate('click');
+        expect(wrapper.find('.status').text()).toContain('X');
+      });
     });
   });
 
