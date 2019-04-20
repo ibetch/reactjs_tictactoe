@@ -1,11 +1,6 @@
-import React from 'react';
-
-import Enzyme, { shallow, mount, render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount, render } from 'enzyme';
 
 import Square from './Square';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('The Square component', () => {
   describe('when shallowly rendered', () => {
@@ -22,7 +17,7 @@ describe('The Square component', () => {
     });
 
     it('renders props when passed in', () => {
-      const mockValue = 'X';
+      const mockValue = 'mock value';
       const wrapper = shallow(<Square value={mockValue} />);
       expect(wrapper.text()).toEqual(mockValue);
     });
