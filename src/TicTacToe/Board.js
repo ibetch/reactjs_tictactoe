@@ -3,8 +3,10 @@ import Square from './Square';
 import calculateWinner from './calculateWinner.util.js';
 
 class Board extends React.Component {
-  /** set square's value attribute to read from the squares array */
-  /** onClick, maintain the Board's state */
+  /**
+   * set square's value attribute to read from the squares array
+   * onClick, maintain the Board's state
+   */
   renderSquare(i) {
     return (
       <Square
