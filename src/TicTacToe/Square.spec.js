@@ -1,5 +1,4 @@
 import { shallow, mount, render } from 'enzyme';
-import sinon from 'sinon';
 
 import Square from './Square';
 
