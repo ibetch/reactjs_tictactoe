@@ -2,7 +2,7 @@ import { shallow, mount, render } from 'enzyme';
 
 import Square from './Square';
 
-describe('The Square component', () => {
+describe('<Square />', () => {
   describe('when shallowly rendered', () => {
     it('should be defined', () => {
       const wrapper = shallow(<Square />);
